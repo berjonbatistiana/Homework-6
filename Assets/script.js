@@ -124,12 +124,19 @@ $(document).ready(function () {
             $currentTemp.text(currentWeather.info.temp);
             $currentWeatherIcon.attr('src', currentWeather.info.weather_icon);
 
+            $currentUvi.removeClass('success-color');
+
+            $currentUvi.removeClass('warning-color');
+
+            $currentUvi.removeClass('danger-color');
+
             if (parseInt(currentWeather.info.uvi) < 3) {
                 $currentUvi.addClass('success-color');
             } else if (parseInt(currentWeather.info.uvi) < 6) {
                 // uvi is moderate
                 $currentUvi.addClass('warning-color');
             } else {
+                console.log('hello')
                 $currentUvi.addClass('danger-color');
 
             }
