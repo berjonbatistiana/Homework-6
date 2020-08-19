@@ -54,7 +54,7 @@ $(document).ready(function () {
             'humidity': '',
             'wind_speed': '',
             'uvi': current.uvi,
-            'weather_icon': `http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`
+            'weather_icon': `${weatherIconUrl}${current.weather[0].icon}${weatherIconUrlSuffix}`
         };
 
         this.fourDayForecast = [];
