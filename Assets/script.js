@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
     const apiKey = '2fb3852d40ec64a76649078f517c7931';
-    const findCityApiUrl = 'http://api.openweathermap.org/data/2.5/find'; // accepts q(city,state/country,country), apikey
+    const findCityApiUrl = 'https://api.openweathermap.org/data/2.5/find'; // accepts q(city,state/country,country), apikey
     const onecallApiUrl = 'https://api.openweathermap.org/data/2.5/onecall'; // accepts lat, lon, exclude(minutely,hourly), units, apikey
-    const weatherIconUrl = 'http://openweathermap.org/img/wn/' // {code}@2x.png
+    const weatherIconUrl = 'https://openweathermap.org/img/wn/' // {code}@2x.png
     const weatherIconUrlSuffix = '@2x.png';
 
     const apiKeyName = 'appid';
