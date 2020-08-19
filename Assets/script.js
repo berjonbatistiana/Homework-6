@@ -88,6 +88,9 @@ $(document).ready(function () {
 
         $.get(findCityApiUrl, data.data).then(function (response) {
             const city = response.list[0];
+            if (!city){
+                alert("City not found");
+            }
             checkWeatherOf(city);
         });
 
@@ -243,6 +246,8 @@ $(document).ready(function () {
          const city = `${history.name}, ${history.sys.country}`;
          addNewHistoryHtml(city, i);
      });
-     checkWeatherOf(searchHistory[searchHistory.length - 1], true);
+     if (searchHistory.length > 0) {
+        checkWeatherOf(searchHistory[searchHistory.length - 1], true);
+     }
 
 });
