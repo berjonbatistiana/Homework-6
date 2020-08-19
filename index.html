@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="Assets/style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark elegant-color">
+        <h1 class="mx-auto white-text font-weight-bold">Weather Dashboard</h1>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <div class="weather-forecast row">
+        <aside class="col-sm-4 side-nav grey lighten-3 d-flex flex-column pt-3">
+          <label for="city-search">
+            Search for a City (city, state, country)
+          </label>
+          <div class="city-search-group">
+            <!-- Search input group -->
+            <form id="search-form" action="#">
+              <div class="input-group mb-4 form-sm form-2 pl-0 d-flex flex-row justify-content-between">
+                <input
+                  id="city-search"
+                  class="form-control my-0 py-1 lime-border col-sm-6"
+                  type="text"
+                  aria-label="Search"
+                />
+                <input
+                  id="city-state-search"
+                  class="form-control my-0 py-1 lime-border col-sm-2"
+                  type="text"
+                  aria-label="Search"
+                />
+                <input
+                  id="city-country-search"
+                  class="form-control my-0 py-1 lime-border col-sm-2"
+                  type="text"
+                  aria-label="Search"
+                />
+                <div class="input-group-append">
+                  <button class="input-group-text blue lighten-2" id="basic-text1"
+                    ><i class="fas fa-search text-grey" aria-hidden="true"></i
+                  ></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="city-search-history white rounded border border-bottom-0">
+            <table class="search-history-table w-100">
+              <tbody class="search-history-table-body">
+                <tr class="search-history-table-row border-bottom" hidden="true">
+                  <td class="p-3">City</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </aside>
+
+        <section class="weather-information col-sm-8" hidden>
+          <div class="today-weather h-35 w-100 d-flex flex-column py-3">
+            <div class="today-weather-container d-flex flex-column border p-3">
+              <div class="city-info d-flex flex-row align-items-center">
+                <h1 class="city-name">City</h1>
+                <h1 class="city-date ml-3">(date)</h1>
+                <span class="weather-icon"><img
+                    class="card-img-top"
+                    src="http://openweathermap.org/img/wn/10n@2x.png"
+                    alt="Card image cap"
+                  /></span>
+              </div>
+              <p class="current-temp">Temperature: <span>100</span></p>
+              <p class="current-humidity">Humidity: <span>100</span></p>
+              <p class="current-wind-spd">Wind Speed: <span>100</span></p>
+              <p class="current-uvi">UV Index: <span class="text-white p-2 rounded font-weight-bold">100</span></p>
+            </div>
+          </div>
+
+          <div class="future-weather">
+            <!-- Card List Start -->
+            <div class="row row-cols-1 row-cols-md-5">
+              <!-- #####Card 1##### -->
+              <div class="col mb-4 info-color-dark" id="future-1">
+                <div class="card h-100 blue lighten-3">
+                  <!--Card image-->
+                  <div class="view overlay">
+                    <img
+                      class="card-img-top"
+                      src="http://openweathermap.org/img/wn/10d@2x.png"
+                      alt="Card image cap"
+                    />
+                    <div class="mask rgba-white-slight"></div>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title forecast-date">(Date)</h4>
+                    <!--Text-->
+                    <div class="temp-forecast">
+                      <p class="card-text">
+                        Temp: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+
+                    <div class="humidity-forecast">
+                      <p class="card-text">
+                        Humidity: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- #####Card 2##### -->
+              <div class="col mb-4 info-color-dark" id="future-2">
+                <div class="card h-100 blue lighten-3">
+                  <!--Card image-->
+                  <div class="view overlay">
+                    <img
+                      class="card-img-top"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                      alt="Card image cap"
+                    />
+                    <div class="mask rgba-white-slight"></div>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title forecast-date">(Date)</h4>
+                    <!--Text-->
+
+                    <div class="temp-forecast">
+                      <p class="card-text">
+                        Temp: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+
+                    <div class="humidity-forecast">
+                      <p class="card-text">
+                        Humidity: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- #####Card 3##### -->
+              <div class="col mb-4 info-color-dark" id="future-3">
+                <div class="card h-100 blue lighten-3">
+                  <!--Card image-->
+                  <div class="view overlay">
+                    <img
+                      class="card-img-top"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                      alt="Card image cap"
+                    />
+                    <div class="mask rgba-white-slight"></div>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title forecast-date">(Date)</h4>
+                    <!--Text-->
+                    <div class="temp-forecast">
+                      <p class="card-text">
+                        Temp: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+
+                    <div class="humidity-forecast">
+                      <p class="card-text">
+                        Humidity: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- #####Card 4##### -->
+              <div class="col mb-4 info-color-dark" id="future-4">
+                <div class="card h-100 blue lighten-3">
+                  <!--Card image-->
+                  <div class="view overlay">
+                    <img
+                      class="card-img-top"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                      alt="Card image cap"
+                    />
+                    <div class="mask rgba-white-slight"></div>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title forecast-date">(Date)</h4>
+                    <!--Text-->
+                    <div class="temp-forecast">
+                      <p class="card-text">
+                        Temp: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+
+                    <div class="humidity-forecast">
+                      <p class="card-text">
+                        Humidity: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- #####Card 5##### -->
+              <div class="col mb-4 info-color-dark" id="future-5">
+                <div class="card h-100 blue lighten-3">
+                  <!--Card image-->
+                  <div class="view overlay">
+                    <img
+                      class="card-img-top"
+                      src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                      alt="Card image cap"
+                    />
+                    <div class="mask rgba-white-slight"></div>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title forecast-date">(Date)</h4>
+                    <!--Text-->
+                    <div class="temp-forecast">
+                      <p class="card-text">
+                        Temp: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+
+                    <div class="humidity-forecast">
+                      <p class="card-text">
+                        Humidity: <span></span>
+                      </p>
+                      <p class="card-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card List End  -->
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="Assets/script.js"></script>
+  </body>
+</html>

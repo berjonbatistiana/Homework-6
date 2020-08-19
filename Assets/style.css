@@ -1,0 +1,11 @@
+html, body, .weather-forecast, .side-nav, .weather-information{
+    height: 100%;
+}
+
+.container-fluid {
+    height: 91%;
+}
+
+#city-search::placeholder {
+    color: red;
+}
